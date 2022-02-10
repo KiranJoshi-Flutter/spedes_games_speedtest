@@ -30,13 +30,18 @@ class _MyHomePageState extends State<MyHomePage> {
   bool toggleBlue = false;
   bool toggleRed = false;
 
+  int toggle = 0;
+
   @override
   void initState() {
     // TODO: implement initState
     super.initState();
     Timer myTimer = Timer.periodic(Duration(seconds: 2), (timer) {
+      toggle = 0;
       setState(() {
-        toggleYellow = !toggleYellow;
+        if (toggle == 0) {
+          toggleYellow = !toggleYellow;
+        }
       });
     });
   }
